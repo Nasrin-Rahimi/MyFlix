@@ -1,18 +1,18 @@
 User
-     belongs_to :plan
+    belongs_to :plan
     has_many :invitations
     has_many :payments
-    <!-- has_many :reviews
-    has_many :videos, through :reviews -->
+    has_many :reviews
+    has_many :videos, through: :reviews 
 
 Video
     has_and_belongs_to_many :genres
-    <!-- has_many :reviews
-    has_many :users, through :reviews -->
+    has_many :reviews
+    has_many :users, through: :reviews
 
-<!-- Review
+Review
     belongs_to :user
-    belongs_to :video -->
+    belongs_to :video
 
 Genre
     has_and_belongs_to_many :videos
