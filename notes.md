@@ -37,11 +37,17 @@ rails g model plan title description price:float
 rails generate migration CreateJoinTableGenreVideo genre video
 
 Signup user 
-    -routes user new, create
-    _controller user new, create
-    _view user new
-    _validations user model
+    -routes: user new, create
+    _controller: user new, create
+    _view: user new
+    _validations: user model
     _show error messages
         error div doesn't work on password and plan
+
+Singin user
+    -routes: session new create destroy
+    -controller: session new create destroy (rails g controller sessions new --no-test-framework)
+    -view: session new
+
 
 <!-- Terms-of-Use : All plans offer unlimited TV shows and movies, on as many devices as you want. HD (720p), Full HD (1080p), Ultra HD (4K) and HDR availability subject to your Internet service and device capabilities. Not all content available in HD, Full HD, Ultra HD, or HDR. -->
