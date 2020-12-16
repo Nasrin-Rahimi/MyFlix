@@ -1,0 +1,17 @@
+<h1>Sign Up</h1>
+
+<%= form_for(@user) do |f| %>
+    <%= f.label :Name %>
+    <%= f.text_field :name %><br>
+
+    <%= f.label :Email %>
+    <%= f.text_field :email %><br>
+
+    <%= f.label :Phone_Number %>
+    <%= f.text_field :phone_number %><br>
+
+    <%= f.label :Plan %>
+    <%= f.text_field :plan_id %><br>
+
+    <%= f.submit 'Signup' %>
+<% end %>
