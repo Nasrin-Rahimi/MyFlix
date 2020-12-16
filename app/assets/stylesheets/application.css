@@ -49,4 +49,8 @@
    height: 290px;
    text-align: left;
  }
+
+  .field_with_errors input[type='text']{
+    border: 1px solid red;
+  }
  
