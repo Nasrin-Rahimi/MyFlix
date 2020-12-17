@@ -4,21 +4,10 @@ class SessionsController < ApplicationController
 
   def create
     if auth_hash = request.env["omniauth.auth"]
-      #they logged in vio OAuth
       #The person 100% trusted coming from github
-      oauth_name = request.env["omniauth.auth"]["info"]["name"]
-      if user = User.find_by(:name => oauth_name)
-           session[:user_id] = user.id
-           redirect_to root_path
-      else
-          user = User.new(:name => oauth_name, :password => SecureRandom.hex)
-          if user.save
-              session[:user_id] = user.id
-              redirect_to root_path
-          else
-              raise user.errors.full_messages.inspect
-          end
-      end
+      user  = User.find_or_create_by_omniauth(auth_hash)
+      session[:user_id] = user.id
+      redirect_to root_path
     else
       #Normal login with an email and password
       user = User.find_by(name: params[:name])

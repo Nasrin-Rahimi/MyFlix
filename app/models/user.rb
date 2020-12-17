@@ -12,9 +12,10 @@ class User < ApplicationRecord
   validates :phone_number, numericality: { only_integer: true }, allow_nil: true
   validates :phone_number, length: { is: 10}, allow_blank: true
 
-  # validates :email, uniqueness: true
-  # validates :name, :login, :email, presence: true
-  # validates :registration_number, length: { is: 6 }, allow_blank: true
-  # validates :points, numericality: true, allow_nil: true
-  # validates :games_played, numericality: { only_integer: true }
+  def self.find_or_create_by_omniauth(auth_hash)
+    user = self.where(name: auth_hash["info"]["name"]).first_or_create do |user|
+      user.password = SecureRandom.hex
+    end
+  end
+  
 end
