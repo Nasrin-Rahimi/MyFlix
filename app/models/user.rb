@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  belongs_to :plan
+  belongs_to :plan, optional: true
   has_many :invitations
   has_many :payments
   has_many :reviews
