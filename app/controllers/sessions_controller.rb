@@ -6,13 +6,13 @@ class SessionsController < ApplicationController
     if auth_hash = request.env["omniauth.auth"]
       #The person 100% trusted coming from github
       user  = User.find_or_create_by_omniauth(auth_hash)
-      session[:user_id] = user.id
+      login(user)
       redirect_to root_path
     else
       #Normal login with an email and password
       user = User.find_by(name: params[:name])
       if user && user.authenticate(params[:password])
-        session[:user_id] = user.id
+        login(user)
         redirect_to root_path
       else
         render 'sessions/new'

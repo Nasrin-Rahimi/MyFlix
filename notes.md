@@ -42,15 +42,13 @@ Signup user
     _view: user new
     _validations: user model
     _show error messages
-        error div doesn't work on password and plan
+        error div doesn't work on password
 
 Login user
     -routes: session new create destroy
     -controller: session new create destroy (rails g controller sessions new --no-test-framework)
     -view: session new
-
-Start from here:
-    check if name or password is blank or incorrect in login page and return appropriate message.
+    -+++++check if name or password is blank or incorrect in login page and return appropriate message.
 
 Login from GitHub
     -Add gems
@@ -59,6 +57,7 @@ Login from GitHub
     -Copy Client ID and Client Secret from GitHub and put them in omniauth.rb
     -Add route for it.
     -Add a link to login page for login via Github.
+    -change create action in session controller
 
 **blog subjects
     about form_with and local: true
