@@ -44,10 +44,24 @@ Signup user
     _show error messages
         error div doesn't work on password and plan
 
-Singin user
+Login user
     -routes: session new create destroy
     -controller: session new create destroy (rails g controller sessions new --no-test-framework)
     -view: session new
 
+Start from here:
+    check if name or password is blank or incorrect in login page and return appropriate message.
 
+Login from GitHub
+    -Add gems
+    -create OAuth Application in GitHub account
+    -create a file omniauth.rb in config/initializers
+    -Copy Client ID and Client Secret from GitHub and put them in omniauth.rb
+    -Add route for it.
+    -Add a link to login page for login via Github.
+
+**blog subjects
+    about form_with and local: true
+    about logged_in user
+    belongs_to :plan, optional: true
 <!-- Terms-of-Use : All plans offer unlimited TV shows and movies, on as many devices as you want. HD (720p), Full HD (1080p), Ultra HD (4K) and HDR availability subject to your Internet service and device capabilities. Not all content available in HD, Full HD, Ultra HD, or HDR. -->
