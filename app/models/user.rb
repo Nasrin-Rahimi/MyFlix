@@ -7,8 +7,8 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  validates :name, :email, presence: true
-  validates :name, :email, uniqueness: true
+  validates :name, presence: true
+  validates :name, uniqueness: true
   validates :phone_number, numericality: { only_integer: true }, allow_nil: true
   validates :phone_number, length: { is: 10}, allow_blank: true
 
