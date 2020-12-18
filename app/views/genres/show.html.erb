@@ -1,12 +1,12 @@
 <h1><%= @genre.title %></h1>
-
+<%= link_to 'Back', genres_path %>
 <div>
     <ul>
         <% @genre.videos.each do |video| %>
             <li>
                 <%= video.title %><br>
                 <%= video.description %><br>
-                <%= image_tag video.image_url %>
+                <%= image_tag video.image_url %><br><br>
             </li>
         <% end %>
     </ul>
