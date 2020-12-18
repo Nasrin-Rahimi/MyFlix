@@ -4,10 +4,6 @@
   <% @genres.each do |genre| %>
     <li>
         <%= link_to genre.title, genre %> |
-        <%= link_to 'Edit', edit_genre_path(genre) %> |
-        <%= link_to "Delete", genre_path(genre),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
     </li>
   <% end %>
 </ul>

@@ -1,5 +1,14 @@
 <h1><%= @genre.title %></h1>
+
 <%= link_to 'Back', genres_path %>
+
+<ul>
+  <li><%= link_to 'Edit Genre', edit_genre_path(@genre) %></li>
+  <li><%= link_to "Delete Genre", genre_path(@genre),
+                method: :delete,
+                data: { confirm: "Are you sure?" } %></li>
+</ul>
+
 <div>
     <ul>
         <% @genre.videos.each do |video| %>
