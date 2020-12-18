@@ -1,0 +1,14 @@
+<h1><%= @genre.title %></h1>
+
+<div>
+    <ul>
+        <% @genre.videos.each do |video| %>
+            <li>
+                <%= video.title %><br>
+                <%= video.description %><br>
+                <%= image_tag video.image_url %>
+            </li>
+        <% end %>
+    </ul>
+
+</div>

@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   belongs_to :plan, optional: true
+  # belongs_to :plan, -> { where active: true }
   has_many :invitations
   has_many :payments
   has_many :reviews
@@ -17,5 +18,5 @@ class User < ApplicationRecord
       user.password = SecureRandom.hex
     end
   end
-  
+
 end

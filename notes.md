@@ -48,8 +48,7 @@ Login user
     -routes: session new create destroy
     -controller: session new create destroy (rails g controller sessions new --no-test-framework)
     -view: session new
-    -+++++check if name or password is blank or incorrect in login page and return appropriate message.
-
+    
 Login from GitHub
     -Add gems
     -create OAuth Application in GitHub account
@@ -57,10 +56,30 @@ Login from GitHub
     -Copy Client ID and Client Secret from GitHub and put them in omniauth.rb
     -Add route for it.
     -Add a link to login page for login via Github.
-    -change create action in session controller
+    -change create action in session controller.
+
+Genres:
+    create genres routes
+    rails g controller Genre new --no-test-framework
+    Crud genre
+
+videos:
+    - create video
+    - update video
+    - show video
+    
+
+++check if name or password is blank or incorrect in login page and return appropriate message.
+++ user belongs to a plan if active is true(Scopes for belongs_to : Associations)
+++add plan dropdown list to user/new
+++signup as admin
+++Controller Namespaces and Routing (admin namespace)
 
 **blog subjects
     about form_with and local: true
     about logged_in user
     belongs_to :plan, optional: true
+    about Choosing Between has_many :through and has_and_belongs_to_many
+    about Creating Join Tables for has_and_belongs_to_many Associations.Active Record creates the name by using the lexical order of the class names. And join table should created without a primary key
+    Association Callbacks
 <!-- Terms-of-Use : All plans offer unlimited TV shows and movies, on as many devices as you want. HD (720p), Full HD (1080p), Ultra HD (4K) and HDR availability subject to your Internet service and device capabilities. Not all content available in HD, Full HD, Ultra HD, or HDR. -->
