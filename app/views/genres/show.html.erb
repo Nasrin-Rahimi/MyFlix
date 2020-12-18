@@ -10,11 +10,7 @@
 </ul>
 
 <h2>Videos</h2>
-<% @genre.videos.each do |video| %>
-    <strong>Title:</strong><%= video.title %><br>
-    <strong>Description:</strong><%= video.description %><br>
-    <%= image_tag video.image_url %><br><br>
-<% end %>
+<%= render @genre.videos %>
 
 <h2>Add a Video:</h2>
 <%= form_with model: [ @genre, @genre.videos.build ], local: true do |f| %>
