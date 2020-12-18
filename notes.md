@@ -60,7 +60,7 @@ Login from GitHub
 
 Genres:
     create genres routes
-    rails g controller Genre new --no-test-framework
+    create controller
     Crud genre
 
 videos:
@@ -74,6 +74,7 @@ videos:
 ++add plan dropdown list to user/new
 ++signup as admin
 ++Controller Namespaces and Routing (admin namespace)
+++Remove video_url from video table
 
 **blog subjects
     about form_with and local: true
