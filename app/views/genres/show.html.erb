@@ -9,15 +9,32 @@
                 data: { confirm: "Are you sure?" } %></li>
 </ul>
 
-<div>
-    <ul>
-        <% @genre.videos.each do |video| %>
-            <li>
-                <%= video.title %><br>
-                <%= video.description %><br>
-                <%= image_tag video.image_url %><br><br>
-            </li>
-        <% end %>
-    </ul>
+<h2>Videos</h2>
+<% @genre.videos.each do |video| %>
+    <strong>Title:</strong><%= video.title %><br>
+    <strong>Description:</strong><%= video.description %><br>
+    <%= image_tag video.image_url %><br><br>
+<% end %>
 
-</div>
+<h2>Add a Video:</h2>
+<%= form_with model: [ @genre, @genre.videos.build ], local: true do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title, :class => 'form-control'  %>
+  </p>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description, :class => 'form-control'  %>
+  </p>
+  <p>
+    <%= f.label :video_url %><br>
+    <%= f.text_field :video_url, :class => 'form-control'  %>
+  </p>
+  <p>
+    <%= f.label :image_url %><br>
+    <%= f.text_field :image_url, :class => 'form-control'  %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
