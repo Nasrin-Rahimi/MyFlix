@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback' , to: 'sessions#create'
 
   resources :genres do
-    resources :videos, only: [:index, :new, :create]
+    resources :videos, only: [:create]
   end
   
   resources :users, only: [:new, :create]
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   post 'sessions', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy'
 
-  resources :videos, only: [:show, :edit, :update, :destroy]
+  resources :videos, only: [:index, :show, :new, :edit, :update, :destroy]
 
   root 'application#home'
 
