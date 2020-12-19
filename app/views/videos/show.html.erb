@@ -1,2 +1,13 @@
 <%= link_to 'Back', videos_path %><br>
+
+<ul>
+  <li><%= link_to 'Edit Video', edit_video_path(@video) %></li>
+  <li><%= link_to "Delete Video", video_path(@video),
+                method: :delete,
+                data: { confirm: "Are you sure?" } %></li>
+</ul>
+
 <%= render @video %>
+
+<h2>Genres</h2>
+<%= render @video.genres %>

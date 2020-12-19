@@ -65,8 +65,12 @@ Genres:
 
 videos:
     - create video
-    - update video
+        select genres from checkbox list
     - show video
+        see the video's genres
+    - update video
+        select genres from checkbox list
+    -delete video
     
 
 ++check if name or password is blank or incorrect in login page and return appropriate message.
@@ -75,6 +79,7 @@ videos:
 ++signup as admin
 ++Controller Namespaces and Routing (admin namespace)
 ++Remove video_url from video table
+
 
 **blog subjects
     about form_with and local: true
