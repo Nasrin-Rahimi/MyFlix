@@ -29,17 +29,19 @@
       <%= f.collection_check_boxes :genre_ids, Genre.order(:title), :id, :title, include_hidden: false, :item_wrapper_class => 'checkbox_container' %>
     </p>
 
-    <p>
-      New Genres:
-      <ul>
-      <%= f.fields_for :genres do |genres_form| %>
-        <li>
-              <%= genres_form.label :title %>
-              <%= genres_form.text_field :title %>
-          </li>
-        <% end %>
-      </ul>
-    </p>
+    <% if video.id == nil %>
+      <p>
+        New Genres:
+        <ul>
+        <%= f.fields_for :genres do |genres_form| %>
+          <li>
+                <%= genres_form.label :title %>
+                <%= genres_form.text_field :title %>
+            </li>
+          <% end %>
+        </ul>
+      </p>
+    <% end %>
 
     <p>
       <%= f.submit %>

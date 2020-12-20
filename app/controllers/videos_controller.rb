@@ -14,12 +14,25 @@ class VideosController < ApplicationController
     end
     
     def create
-        # raise params.inspect
         @video = Video.new(video_params)
         if @video.save
             redirect_to video_path(@video)
         else
             render :new
+        end
+    end
+
+    def edit
+        @video = Video.find(params[:id])
+    end
+
+    def update
+        @video = Video.find(params[:id])
+
+        if @video.update(video_params)
+            redirect_to @video
+        else
+            render :edit
         end
     end
 
