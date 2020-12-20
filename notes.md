@@ -62,15 +62,19 @@ Genres:
     create genres routes
     create controller
     Crud genre
+    genre validation
 
 videos:
     - create video
-        select genres from checkbox list
+        select genres from checkbox list- add new genres
     - show video
         see the video's genres
     - update video
         select genres from checkbox list
     -delete video
+
+include_hidden: false used in video/_form for removing empty element from genre_ids array.
+reject_if: :all_blank used in accepts_nested_attributes_for :genres in video model for doesn't check validation if new genre doesn't fill.
     
 
 ++check if name or password is blank or incorrect in login page and return appropriate message.
@@ -79,6 +83,7 @@ videos:
 ++signup as admin
 ++Controller Namespaces and Routing (admin namespace)
 ++Remove video_url from video table
+++ video validation create and update video
 
 
 **blog subjects

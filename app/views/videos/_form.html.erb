@@ -1,4 +1,14 @@
-<%= form_with model: [ @genre, @genre.videos.build ], local: true do |f| %>
+<% if video.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+    <% video.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_with model: video, local: true do |f| %>
     <p>
       <%= f.label :title %><br>
       <%= f.text_field :title, :class => 'form-control'  %>
@@ -15,6 +25,22 @@
       <%= f.label :image_url %><br>
       <%= f.text_field :image_url, :class => 'form-control'  %>
     </p>
+    <p>
+      <%= f.collection_check_boxes :genre_ids, Genre.order(:title), :id, :title, include_hidden: false, :item_wrapper_class => 'checkbox_container' %>
+    </p>
+
+    <p>
+      New Genres:
+      <ul>
+      <%= f.fields_for :genres do |genres_form| %>
+        <li>
+              <%= genres_form.label :title %>
+              <%= genres_form.text_field :title %>
+          </li>
+        <% end %>
+      </ul>
+    </p>
+
     <p>
       <%= f.submit %>
     </p>

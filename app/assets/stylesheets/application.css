@@ -53,4 +53,11 @@
   .field_with_errors input[type='text']{
     border: 1px solid red;
   }
+
+  .checkbox_container input {
+    display: inline;
+    vertical-align: -1px;
+    margin: 5px;
+  }
+
  
