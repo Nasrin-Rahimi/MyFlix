@@ -37,11 +37,9 @@ class VideosController < ApplicationController
     end
 
     def destroy
-        # raise params.inspect
-        # @genre = Genre.find(params[:genre_id])
-        # @video = @genre.videos.find(params[:id])
-        # @video.destroy
-        # redirect_to genre_path(@genre)
+        @video = Video.find(params[:id])
+        @video.destroy
+        redirect_to videos_path
     end
 
     private
