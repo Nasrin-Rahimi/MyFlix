@@ -1,0 +1,6 @@
+<h2>Reviews</h2>
+
+<% @reviews.each do |review| %>
+    <strong>Rating: <%= render_stars(review.rating) %> </strong><br>
+    Description: <%= review.description %><br><br>
+<% end %>

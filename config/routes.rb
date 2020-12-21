@@ -2,8 +2,10 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback' , to: 'sessions#create'
 
-  resources :genres , :videos, :users
-  resources :reviews, only: [:index, :show, :new, :create]
+  resources :genres , :users
+  resources :videos do
+    resources :reviews, only: [:index, :show, :new, :create]
+  end
 
   get 'login', to: 'sessions#new'
   post 'sessions', to: 'sessions#create'

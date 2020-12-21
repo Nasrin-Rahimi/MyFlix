@@ -8,6 +8,9 @@ class Review < ApplicationRecord
     self.video.title if self.present? && self.video.present?
   end
 
+  def self.find_by_video(video_id)
+    Review.where(video_id: video_id)
+  end
   # def user_name
   #   self.user.name
   # end

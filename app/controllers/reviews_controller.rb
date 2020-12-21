@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
 
     def index
+        @reviews = Review.find_by_video(params[:video_id])
     end
 
     def show
