@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
-
+    before_action :authentication_required
+    
     def index
         @reviews = Review.find_by_video(params[:video_id])
     end
