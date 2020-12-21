@@ -1,11 +1,12 @@
 class VideosController < ApplicationController
 
+    before_action :set_video, only: [:show, :edit, :update]
+
     def index
         @videos = Video.all
     end 
 
     def show
-        @video = Video.find(params[:id])
     end
 
     def new
@@ -23,12 +24,9 @@ class VideosController < ApplicationController
     end
 
     def edit
-        @video = Video.find(params[:id])
     end
 
     def update
-        @video = Video.find(params[:id])
-
         if @video.update(video_params)
             redirect_to @video
         else
@@ -46,6 +44,10 @@ class VideosController < ApplicationController
 
     def video_params
         params.require(:video).permit(:title, :description, :video_url, :image_url, genre_ids: [], genres_attributes: [:title])
+    end
+
+    def set_video
+        @video = Video.find(params[:id])
     end
 
 end
