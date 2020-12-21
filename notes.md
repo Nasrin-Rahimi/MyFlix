@@ -75,6 +75,12 @@ videos:
 
 include_hidden: false used in video/_form for removing empty element from genre_ids array.
 reject_if: :all_blank used in accepts_nested_attributes_for :genres in video model for doesn't check validation if new genre doesn't fill.
+
+Reviews:
+    -add nested route videos/reviews
+    -reviews controller
+    -show reviews for a particular video.
+    -write a review for a video.
     
 
 ++check if name or password is blank or incorrect in login page and return appropriate message.
