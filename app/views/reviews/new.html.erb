@@ -20,8 +20,14 @@
       <%= f.text_area :description, :class => 'form-control'  %>
     </p>
     <p>
+        <%= f.hidden_field :video_id, :class => 'form-control', value: @review.video_id  %>
+    </p>
+    <p>
       <%= f.submit %>
     </p>
+
   <% end %>
 
-  <%= link_to 'Back', video_path(@review.video) %><br>
+  <%= link_to 'Back', video_path(@review.video) %>
+
+  
