@@ -26,5 +26,11 @@ class ApplicationController < ActionController::Base
     def login(user)
         session[:user_id] = user.id
     end
+
+#     def require_admin
+#         if !current_user.admin?
+#               redirect_to benefits_path
+#         end
+#    end
     
 end

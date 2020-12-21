@@ -15,4 +15,8 @@ class Video < ApplicationRecord
 
     validates :title, presence: true
     validates :title, uniqueness: true
+
+    def rating_to_stars
+        self.reviews.average('rating')
+    end
 end

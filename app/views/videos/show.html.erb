@@ -11,3 +11,11 @@
 
 <h2>Genres</h2>
 <%= render @video.genres %>
+
+<div id="star-rating">
+  <% if @video.rating_to_stars.blank? %>
+    <%= link_to 'Please add a Review',{ controller: 'reviews', action: 'new', id: @video.id } %>
+  <% else %>
+    Rating: <%=link_to render_stars(@video.rating_to_stars), reviews_path %>
+  <% end %>
+</div> 
