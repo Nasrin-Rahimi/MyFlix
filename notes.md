@@ -81,6 +81,10 @@ Reviews:
     -reviews controller
     -show reviews for a particular video.
     -write a review for a video.
+
+Users: 
+    -Show page has edit link
+    -update user
     
 
 ++check if name or password is blank or incorrect in login page and return appropriate message.
@@ -90,6 +94,7 @@ Reviews:
 ++Controller Namespaces and Routing (admin namespace)
 ++Remove video_url from video table
 ++ video validation create and update video
+++ change password
 
 
 **blog subjects
