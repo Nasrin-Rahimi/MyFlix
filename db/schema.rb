@@ -35,21 +35,6 @@ ActiveRecord::Schema.define(version: 2020_12_15_201344) do
     t.index ["user_id"], name: "index_invitations_on_user_id"
   end
 
-  create_table "payments", force: :cascade do |t|
-    t.float "amount"
-    t.datetime "created_at"
-    t.integer "user_id", null: false
-    t.index ["user_id"], name: "index_payments_on_user_id"
-  end
-
-  create_table "plans", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
-    t.float "price"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.text "description"
@@ -65,10 +50,8 @@ ActiveRecord::Schema.define(version: 2020_12_15_201344) do
     t.string "password_digest"
     t.string "email"
     t.integer "phone_number"
-    t.integer "plan_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["plan_id"], name: "index_users_on_plan_id"
   end
 
   create_table "videos", force: :cascade do |t|
@@ -81,8 +64,6 @@ ActiveRecord::Schema.define(version: 2020_12_15_201344) do
   end
 
   add_foreign_key "invitations", "users"
-  add_foreign_key "payments", "users"
   add_foreign_key "reviews", "users"
   add_foreign_key "reviews", "videos"
-  add_foreign_key "users", "plans"
 end
