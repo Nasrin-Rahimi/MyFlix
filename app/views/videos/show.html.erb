@@ -14,7 +14,7 @@
 
 <div id="star-rating">
   <% if @video.rating_to_stars.blank? %>
-    <%= link_to 'Please add a Review',{ controller: 'reviews', action: 'new', video_id: @video.id } %>
+    <%= link_to 'Please add a Review', new_video_review_path(@video) %>
   <% else %>
     Rating: <%=link_to render_stars(@video.rating_to_stars), video_reviews_path(@video) %>
   <% end %>

@@ -1,4 +1,6 @@
-<h2>Reviews</h2>
+<h2><%= @reviews.first.video_name %> Reviews</h2>
+
+<%=link_to 'Write a review', new_video_review_path(@reviews.first.video_id) %><br>
 
 <% @reviews.each do |review| %>
     <strong>Rating: <%= render_stars(review.rating) %> </strong><br>
