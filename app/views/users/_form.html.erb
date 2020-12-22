@@ -22,5 +22,8 @@
   <%= f.label :password, "Password" %>
   <%= f.password_field :password, :class => 'form-control' %>
 
+  <%= f.check_box :admin %>
+  <%= f.label :admin, "Admin" %><br>
+
   <%= f.submit %>
 <% end %>
