@@ -86,9 +86,12 @@ Users:
     -Show page has edit link
     -update user
     
+Add admin 
+    rails g migration AddAdminToUsers admin:boolean
+    - Sign up as admin
+    -login as admin and see the admin panel.
 
 ++ user belongs to a plan if active is true(Scopes for belongs_to : Associations)
-++signup as admin
 ++Controller Namespaces and Routing (admin namespace)
 ++Remove video_url from video table
 ++ video validation create and update video
