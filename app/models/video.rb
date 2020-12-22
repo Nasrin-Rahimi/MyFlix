@@ -13,9 +13,8 @@ class Video < ApplicationRecord
     #     genres_attributes  
     # end
 
-    validates :title, presence: true
-    validates :title, uniqueness: true
-
+    validates :title, presence: true, uniqueness: true
+   
     def rating_to_stars
         self.reviews.average('rating')
     end

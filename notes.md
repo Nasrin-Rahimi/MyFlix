@@ -87,9 +87,7 @@ Users:
     -update user
     
 
-++check if name or password is blank or incorrect in login page and return appropriate message.
 ++ user belongs to a plan if active is true(Scopes for belongs_to : Associations)
-++add plan dropdown list to user/new
 ++signup as admin
 ++Controller Namespaces and Routing (admin namespace)
 ++Remove video_url from video table
