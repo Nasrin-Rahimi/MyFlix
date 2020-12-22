@@ -9,6 +9,16 @@ class ApplicationController < ActionController::Base
         end
     end
 
+    def admin_authentication_required
+        # authentication_required
+        if !logged_in?
+            redirect_to login_path
+        elsif !is_admin?
+            flash[:notice] = "You don't have access to that page!"
+            redirect_to root_url
+        end
+    end
+
     def logged_in?
         #session[:user_id] it doesn''t work. user who logged in can see the other users pages!
         !!current_user
