@@ -16,9 +16,16 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  
+html, body {
+  height: 100%;
+}
+
  body {
    padding-top: 70px;
-   padding-bottom: 30px;
+   padding-bottom: 30px; 
+   /* background-image: url("http://source.unsplash.com/featured/1920x1080/?netflix"); */
+   /* background-size: cover;
+   background-repeat: no-repeat; */
  }
  
  .theme-dropdown .dropdown-menu {
@@ -59,5 +66,17 @@
     vertical-align: -1px;
     margin: 5px;
   }
+
+  .home_page_container{
+   background-attachment: fixed;
+   width: 1400px;
+   height: 600px;
+   background-image: url("http://source.unsplash.com/featured/1920x1080/?netflix");
+   background-size: cover;
+   background-repeat: no-repeat;
+  }
+
+
+
 
  

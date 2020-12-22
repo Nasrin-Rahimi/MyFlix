@@ -25,9 +25,14 @@
       <%= f.label :image_url %><br>
       <%= f.text_field :image_url, :class => 'form-control'  %>
     </p>
-    <p>
-      <%= f.collection_check_boxes :genre_ids, Genre.order(:title), :id, :title, include_hidden: false, :item_wrapper_class => 'checkbox_container' %>
-    </p>
+    <div class="checkbox_container">
+      <%= f.collection_check_boxes :genre_ids, Genre.order(:title), :id, :title, include_hidden: false do |b| %>
+        <div>
+          <%= b.check_box %>
+          <%= b.label %>
+        </div>
+      <% end %>
+    </div>
 
     <% if video.id == nil %>
       <p>
