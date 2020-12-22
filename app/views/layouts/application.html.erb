@@ -32,7 +32,7 @@
         <li class="nav-item">
           <a class="nav-link" href="<%= login_path %>"/> Log in <span class="sr-only">(current)</span></a>  
         </li>
-      <% else %>
+      <% elsif is_admin? %>
         <li class="nav-item">
           <a class="nav-link" href="<%= videos_path %>"/> Videos <span class="sr-only">(current)</span></a>  
         </li>
@@ -40,19 +40,29 @@
           <a class="nav-link" href="<%= genres_path %>"/> Genres <span class="sr-only">(current)</span></a>  
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"/> My List <span class="sr-only">(current)</span></a>  
+          <a class="nav-link" href="#"/> Users <span class="sr-only">(current)</span></a>  
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <%= current_user.name if current_user %>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="<%= user_path(current_user) %>">Account</a>
-            <a class="dropdown-item" href="<%= user_path(current_user) %>">Friends Invitation</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="<%= logout_path %>" /> Log out </a>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link" href="<%= logout_path %>"/> Log out <span class="sr-only">(current)</span></a>  
         </li>
+        <% else %>
+          <li class="nav-item">
+          <a class="nav-link" href="<%= videos_path %>"/> Videos <span class="sr-only">(current)</span></a>  
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"/> My List <span class="sr-only">(current)</span></a>  
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= current_user.name if current_user %>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="<%= user_path(current_user) %>">Account</a>
+              <a class="dropdown-item" href="<%= user_path(current_user) %>">Friends Invitation</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="<%= logout_path %>" /> Log out </a>
+            </div>
+          </li>
       <% end %>
       </ul>
       

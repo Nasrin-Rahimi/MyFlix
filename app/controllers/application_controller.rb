@@ -19,13 +19,18 @@ class ApplicationController < ActionController::Base
         @current_user ||= User.find(session[:user_id]) if session[:user_id]
     end
 
-    helper_method :current_user
+    def is_admin?
+        current_user.admin?
+    end
+
+    helper_method :current_user, :is_admin?
 
     private
 
     def login(user)
         session[:user_id] = user.id
     end
+
 
 #     def require_admin
 #         if !current_user.admin?
