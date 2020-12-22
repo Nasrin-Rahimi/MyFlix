@@ -16,7 +16,7 @@
   
   </head>
 
-  <body>
+  <body style="background: #dfe8eb;">
   <nav class="navbar fixed-top navbar-expand-lg  navbar-gray bg-dark">
     <a class="navbar-brand" href="<%= root_path %>">MyFlix</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,6 +48,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="<%= user_path(current_user) %>">Account</a>
+            <a class="dropdown-item" href="<%= user_path(current_user) %>">Friends Invitation</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="<%= logout_path %>" /> Log out </a>
           </div>
@@ -57,7 +58,7 @@
       
     </div>
   </nav>
-  <div class="container"  role="main">
+  <div class="container"  role="main" >
       <%= yield %>
   </div>
   
