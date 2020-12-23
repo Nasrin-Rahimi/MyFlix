@@ -96,6 +96,7 @@ Add admin
 ++Remove video_url from video table
 ++ video validation create and update video
 ++ change password
+++ Delete user errors
 
 
 **blog subjects
