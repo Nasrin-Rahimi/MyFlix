@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
 
   before_action :authentication_required, except: [:new, :create]
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :admin_authentication_required, only: :index
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+
+  def index
+    @users = User.all
+  end
 
   def show
   end
@@ -31,6 +36,10 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    # @user.destroy
   end
 
   private

@@ -14,8 +14,7 @@ class ApplicationController < ActionController::Base
         if !logged_in?
             redirect_to login_path
         elsif !is_admin?
-            flash[:notice] = "You don't have access to that page!"
-            redirect_to root_url
+            redirect_to root_url, notice: "You don't have access to that page!"
         end
     end
 

@@ -1,5 +1,6 @@
 <h2><%= @reviews.first.video_name %> Reviews</h2>
 
+<%= link_to 'Back', video_path(@reviews.first.video) %> | 
 <%=link_to 'Write a review', new_video_review_path(@reviews.first.video_id) %><br>
 
 <% @reviews.each do |review| %>
