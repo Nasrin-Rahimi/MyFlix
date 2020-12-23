@@ -5,6 +5,7 @@ class CreateVideos < ActiveRecord::Migration[6.0]
       t.text :description
       t.string :video_url
       t.string :image_url
+      t.integer :released_year
 
       t.timestamps
     end

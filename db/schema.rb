@@ -25,16 +25,6 @@ ActiveRecord::Schema.define(version: 2020_12_22_222059) do
     t.index ["video_id"], name: "index_genres_videos_on_video_id"
   end
 
-  create_table "invitations", force: :cascade do |t|
-    t.string "receiver_name"
-    t.string "receiver_email"
-    t.text "message"
-    t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_invitations_on_user_id"
-  end
-
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.text "description"
@@ -60,11 +50,11 @@ ActiveRecord::Schema.define(version: 2020_12_22_222059) do
     t.text "description"
     t.string "video_url"
     t.string "image_url"
+    t.integer "released_year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "invitations", "users"
   add_foreign_key "reviews", "users"
   add_foreign_key "reviews", "videos"
 end

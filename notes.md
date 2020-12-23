@@ -97,6 +97,9 @@ Add admin
 ++ video validation create and update video
 ++ change password
 ++ Delete user errors
+++ My List()
+    Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+++Add released year to video
 
 
 **blog subjects
