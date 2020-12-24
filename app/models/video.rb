@@ -2,7 +2,12 @@ class Video < ApplicationRecord
     has_and_belongs_to_many :genres
     has_many :reviews
     has_many :users, through: :reviews
+
     accepts_nested_attributes_for :genres, reject_if: :all_blank
+
+    validates :released_year, numericality: { only_integer: true }, allow_nil: true, length: { is: 4}
+
+    scope :new_released, -> {where("released_year >= ?", Time.current.year) }
 
     # def genres_attributes=(genres_attributes)
     #     genres_attributes.each do |genre_attributes|

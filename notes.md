@@ -100,6 +100,8 @@ Add admin
 ++ My List()
     Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
 ++Add released year to video
+++ New video when has errors, do not show new genres boxes!!!!
+++ see new released videos
 
 
 **blog subjects

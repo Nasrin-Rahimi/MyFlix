@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :authentication_required, except: [:new, :create]
-  before_action :admin_authentication_required, only: :index
+  before_action :authorize_admin, only: [:index, :destroy]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index

@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   post 'sessions', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy'
 
+  # get 'admin/panel', to: 'admin#'
+
   root 'application#home'
 
 end
