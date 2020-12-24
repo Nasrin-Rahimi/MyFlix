@@ -1,6 +1,7 @@
 class VideosController < ApplicationController
 
     before_action :authentication_required
+    before_action :authorize_admin, except: [:index, :show]
     before_action :set_video, only: [:show, :edit, :update]
     
     def index
@@ -44,7 +45,7 @@ class VideosController < ApplicationController
     private
 
     def video_params
-        params.require(:video).permit(:title, :description, :video_url, :image_url, genre_ids: [], genres_attributes: [:title])
+        params.require(:video).permit(:title, :description, :video_url, :image_url, :released_year, genre_ids: [], genres_attributes: [:title])
     end
 
     def set_video
