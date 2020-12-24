@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-    include SessionsHelper
+    include SessionsHelper, ApplicationHelper
 
     def home
     end
@@ -13,13 +13,8 @@ class ApplicationController < ActionController::Base
         end
     end
 
-    def admin_authentication_required
-        # authentication_required
-        if !logged_in?
-            redirect_to login_path
-        elsif !is_admin?
-            redirect_to root_url, notice: "You don't have access to that page!"
-        end
+    def authorize_admin
+       redirect_to root_url, notice: "You don't have access to that page!" if !is_admin? 
     end
-    
+
 end

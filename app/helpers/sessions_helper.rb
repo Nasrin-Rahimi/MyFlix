@@ -14,8 +14,4 @@ module SessionsHelper
         session[:user_id] = user.id
     end
 
-    def is_admin?
-        current_user.admin?
-    end
-
 end
