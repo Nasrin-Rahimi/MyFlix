@@ -14,8 +14,5 @@ class Review < ApplicationRecord
   # def self.find_by_video(video_id)
   #   Review.where(video_id: video_id)
   # end
-  # def user_name
-  #   self.user.name
-  # end
 
 end
