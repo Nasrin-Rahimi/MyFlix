@@ -11,7 +11,10 @@ Rails.application.routes.draw do
   post 'sessions', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy'
 
-  # get 'admin/panel', to: 'admin#'
+  # OR scope '/admin', module: 'admin' do
+  namespace :admin do  
+    resources :stats, only: [:index]
+  end
 
   root 'application#home'
 

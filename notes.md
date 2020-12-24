@@ -89,9 +89,11 @@ Users:
 Add admin 
     rails g migration AddAdminToUsers admin:boolean
     - Sign up as admin
-    -login as admin and see the admin panel.
+    -login as admin and see the admin menu.
+    -add admin authorizastion before required actions.
+    -add scope admin and add a route for management controller.
+    -add admin dir in controllers.
 
-++ user belongs to a plan if active is true(Scopes for belongs_to : Associations)
 ++Controller Namespaces and Routing (admin namespace)
 ++Remove video_url from video table
 ++ video validation create and update video
