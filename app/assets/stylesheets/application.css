@@ -76,6 +76,16 @@ html, body {
    background-repeat: no-repeat;
   }
 
+  fieldset {
+    background-color: #eeeeee;
+  }
+  
+  legend {
+    background-color: gray;
+    color: white;
+    padding: 5px 10px;
+  }
+
 
 
  
