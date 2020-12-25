@@ -94,7 +94,6 @@ Add admin
     -add scope admin and add a route for management controller.
     -add admin dir in controllers.
 
-++Controller Namespaces and Routing (admin namespace)
 ++Remove video_url from video table
 ++ video validation create and update video
 ++ change password
