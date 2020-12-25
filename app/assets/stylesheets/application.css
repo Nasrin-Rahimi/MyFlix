@@ -76,16 +76,11 @@ html, body {
    background-repeat: no-repeat;
   }
 
-  fieldset {
-    background-color: #eeeeee;
+  .home_div{
+    text-align: center;
+    margin: 60px;
+    padding: 20px;
+    background-color: #caebf2;
   }
-  
-  legend {
-    background-color: gray;
-    color: white;
-    padding: 5px 10px;
-  }
-
-
 
  

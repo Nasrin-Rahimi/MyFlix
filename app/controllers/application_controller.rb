@@ -3,6 +3,9 @@ class ApplicationController < ActionController::Base
     include SessionsHelper, ApplicationHelper
 
     def home
+        @users_count = User.count
+        @genres_count = Genre.count
+        @videos_count = Video.count
     end
 
     private
