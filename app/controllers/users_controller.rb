@@ -39,7 +39,14 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    # @user.destroy
+    if @user.admin
+      @users = User.all
+      flash.now[:notice] ="You don't have permission to delete Admin"
+      render :index
+    else
+      @user.destroy
+      redirect_to users_path
+    end
   end
 
   private
