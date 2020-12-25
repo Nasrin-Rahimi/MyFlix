@@ -10,15 +10,6 @@ class Video < ApplicationRecord
 
     scope :new_released, -> {where("released_year >= ?", Time.current.year) }
 
-    # def genres_attributes=(genres_attributes)
-    #     genres_attributes.each do |genre_attributes|
-    #         if genre_attributes[1][:title] == ""
-    #             genres_attributes.delete(genre_attributes[0])
-    #         end  
-    #     end
-    #     genres_attributes  
-    # end
-   
     def rating_to_stars
         self.reviews.average('rating')
     end

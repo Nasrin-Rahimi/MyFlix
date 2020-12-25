@@ -13,8 +13,8 @@ class User < ApplicationRecord
     end
   end
 
-  def admin?
-    self.admin
-  end
+  # def admin?
+  #   self.admin
+  # end
 
 end
