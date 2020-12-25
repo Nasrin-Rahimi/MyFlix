@@ -13,7 +13,7 @@ class VideosController < ApplicationController
 
     def new
         @video = Video.new
-        2.times { @video.genres.build }
+        build_new_genres
     end
     
     def create
@@ -21,7 +21,7 @@ class VideosController < ApplicationController
         if @video.save
             redirect_to video_path(@video)
         else
-            2.times { @video.genres.build }
+            build_new_genres
             render :new
         end
     end
@@ -51,6 +51,10 @@ class VideosController < ApplicationController
 
     def set_video
         @video = Video.find(params[:id])
+    end
+
+    def build_new_genres
+        2.times { @video.genres.build }
     end
 
 end
