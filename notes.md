@@ -96,6 +96,7 @@ Add admin
 
 ++Remove video_url from video table
 ++ change password
+++ try to use strong parameters for creating reviews.
 
 ++ My List()
     Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)

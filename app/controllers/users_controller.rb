@@ -60,7 +60,3 @@ class UsersController < ApplicationController
   end
 
 end
-
-# if @user.plan.nil?
-#   @msg = "No plan found for this user"
-# end
