@@ -21,6 +21,7 @@ class VideosController < ApplicationController
         if @video.save
             redirect_to video_path(@video)
         else
+            2.times { @video.genres.build }
             render :new
         end
     end

@@ -7,5 +7,9 @@ module VideosHelper
         end
         output
       end
+
+      def videos_count
+        Video.count
+    end
       
 end
