@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
     before_action :authentication_required
+    before_action :set_review, only: [:show, :edit, :update, :destroy]
     
     def index
         @reviews = Review.by_video(params[:video_id])
@@ -25,11 +26,9 @@ class ReviewsController < ApplicationController
     end
 
     def edit
-        @review = Review.find(params[:id])
     end
 
     def update
-        @review = Review.find(params[:id])
         if @review.update(review_params)
             redirect_to video_reviews_path(@review.video)
         else
@@ -37,10 +36,19 @@ class ReviewsController < ApplicationController
         end
     end
 
+    def destroy
+        @review.destroy
+        redirect_to video_reviews_path(@review.video)
+    end
+
     private
 
     def review_params
         params.require(:review).permit(:rating, :user_id, :video_id, :description)
+    end
+
+    def set_review
+        @review = Review.find(params[:id])
     end
 
 end
