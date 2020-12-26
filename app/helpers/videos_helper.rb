@@ -11,5 +11,9 @@ module VideosHelper
       def videos_count
         Video.count
     end
+
+    def five_videos
+      Video.limit(5)
+    end
       
 end
