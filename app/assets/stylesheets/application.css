@@ -67,14 +67,14 @@ html, body {
     margin: 5px;
   }
 
-  .home_page_container{
+  /* .home_page_container{
    background-attachment: fixed;
    width: 1400px;
    height: 600px;
    background-image: url("http://source.unsplash.com/featured/1920x1080/?netflix");
    background-size: cover;
    background-repeat: no-repeat;
-  }
+  } */
 
   .home_div{
     text-align: center;
