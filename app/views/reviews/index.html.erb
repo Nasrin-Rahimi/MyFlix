@@ -1,9 +1,14 @@
 <h2><%= @reviews.first.video_name %> Reviews</h2>
 
 <%= link_to 'Back', video_path(@reviews.first.video) %> | 
-<%=link_to 'Write a review', new_video_review_path(@reviews.first.video_id) %><br>
+<% if user_video_exists?(@reviews.first.video) %>
+    <%=link_to 'Edit your review', edit_video_review_path(@reviews.first.video_id, review_by_user_video(@reviews.first.video)) %><br>
+<% else %>
+    <%=link_to 'Write a review', new_video_review_path(@reviews.first.video_id) %><br>
+<% end %>
 
 <% @reviews.each do |review| %>
+    <strong>Review By: <%= review.user_name %> </strong><br>
     <strong>Rating: <%= render_stars(review.rating) %> </strong><br>
-    Description: <%= review.description %><br><br>
+    <strong>Description: <%= review.description %> </strong><br><br>
 <% end %>

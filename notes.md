@@ -81,6 +81,8 @@ Reviews:
     -reviews controller
     -show reviews for a particular video.
     -write a review for a video.
+    -Edit review.
+    -delete review
 
 Users: 
     -Show page has edit link
@@ -98,6 +100,7 @@ Add admin
 ++ change password
 ++ try to use strong parameters for creating reviews.
 ++Check session helper
+++when user login see videos.
 
 ++ My List()
     Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)

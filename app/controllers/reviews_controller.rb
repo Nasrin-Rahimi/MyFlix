@@ -16,12 +16,24 @@ class ReviewsController < ApplicationController
     end
 
     def create
-        #try to use strong parameters
-        @review = Review.new(video_id: params[:video_id], user_id: current_user.id, rating: params[:review][:rating], description: params[:review][:description])
+        @review = Review.new(review_params)
         if @review.save
             redirect_to video_path(@review.video)
         else
             render :new
+        end
+    end
+
+    def edit
+        @review = Review.find(params[:id])
+    end
+
+    def update
+        @review = Review.find(params[:id])
+        if @review.update(review_params)
+            redirect_to video_reviews_path(@review.video)
+        else
+            render :edit
         end
     end
 

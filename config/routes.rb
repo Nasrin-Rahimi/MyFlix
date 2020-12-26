@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :genres , :users
   resources :videos do
-    resources :reviews, only: [:index, :show, :new, :create]
+    resources :reviews
   end
 
   get 'login', to: 'sessions#new'
