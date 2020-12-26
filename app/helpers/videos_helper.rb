@@ -13,7 +13,7 @@ module VideosHelper
     end
 
     def five_videos
-      Video.limit(5)
+      Video.limit(5).order("RANDOM()")
     end
       
 end

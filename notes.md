@@ -100,7 +100,7 @@ Add admin
 ++ change password
 ++ try to use strong parameters for creating reviews.
 ++Check session helper
-++when user login see videos.
+++change video linkin menu to see vieo by release year or by genres.
 ++select image url for new or edit video
 
 ++ My List()
