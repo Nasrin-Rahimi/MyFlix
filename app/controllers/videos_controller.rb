@@ -50,7 +50,7 @@ class VideosController < ApplicationController
 
     def video_params
         params[:video][:image_url] = "videos/" + params[:video][:image_url].original_filename if params[:video][:image_url]
-        params.require(:video).permit(:title, :description, :video_url, :image_url, :released_year, genre_ids: [], genres_attributes: [:title])
+        params.require(:video).permit(:title, :description, :image_url, :released_year, genre_ids: [], genres_attributes: [:title])
     end
 
     def set_video
