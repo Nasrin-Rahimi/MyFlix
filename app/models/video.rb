@@ -13,4 +13,12 @@ class Video < ApplicationRecord
     def rating_to_stars
         self.reviews.average('rating')
     end
+
+    def self.search(genre)
+        if !genre || genre[:genre_id].empty?
+           all
+        else
+            Genre.find(genre[:genre_id]).videos
+        end
+    end 
 end
