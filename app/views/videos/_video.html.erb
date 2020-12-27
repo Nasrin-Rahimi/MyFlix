@@ -4,4 +4,6 @@
 
 <strong>Released Year:</strong><%= video.released_year %><br>
 
-<%= image_tag video.image_url,alt: video.title + " Image", class: "video_image"  %><br><br>
+<% if video.image_url %>
+    <%= image_tag video.image_url, class: "video_image"  %><br><br>
+<% end %>

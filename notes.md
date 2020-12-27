@@ -98,7 +98,6 @@ Add admin
 
 ++Remove video_url from video table
 ++ change password
-++ try to use strong parameters for creating reviews.
 ++Check session helper
 ++change video linkin menu to see vieo by release year or by genres.
 ++select image url for new or edit video
