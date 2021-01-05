@@ -4,6 +4,7 @@
         <th>User Name</th>
         <th>Email</th>
         <th>Phone Number</th>
+        <th>Admin</th>
         <th></th>
     </tr>
     <% @users.each do |user| %>
@@ -11,6 +12,7 @@
             <td><%= user.name %></td>
             <td><%= user.email %></td>
             <td><%= user.phone_number %></td>
+            <td><%= true_false_to_yes_no(user.admin) %></td>
             <td><%= link_to "Delete User", user_path(user),
                     method: :delete,
                     data: { confirm: "Are you sure?" } %></td>
