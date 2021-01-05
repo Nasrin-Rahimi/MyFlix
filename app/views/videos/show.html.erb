@@ -9,8 +9,8 @@
 
 <%= render @video %>
 
-<h2>Genres</h2>
-<%= render @video.genres %>
+<h3>Video's Genres</h3>
+<%= render @video.genres %><br>
 
 <div id="star-rating">
   <% if @video.rating_to_stars.blank? %>
