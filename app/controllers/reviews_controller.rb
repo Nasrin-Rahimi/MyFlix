@@ -3,10 +3,8 @@ class ReviewsController < ApplicationController
     before_action :set_review, only: [:show, :edit, :update, :destroy]
     
     def index
-        @reviews = Review.by_video(params[:video_id])
-        # OR
-        # @video = Video.find(params[:video_id])
-        # @reviews = @video.reviews
+        @video = Video.find(params[:video_id])
+        @reviews = @video.reviews
     end
 
     def show
