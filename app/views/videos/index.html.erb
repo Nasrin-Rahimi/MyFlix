@@ -3,7 +3,7 @@
 
 <%= form_with(url: '/videos', method: 'get', local: true) do |f| %>
   <%= collection_select :genre, :genre_id, Genre.order(:title), :id, :title, :prompt => 'Genres' %>
-  <%= f.submit "Search" %>
+  <%= f.submit "Search", :class => "btn btn-info" %>
 <% end %>
 
 <br><br>

@@ -18,12 +18,12 @@
       <%= f.text_area :description, :class => 'form-control'  %>
     </p>
     <p>
-      <%= f.label :image_url %>
-      <%= f.file_field :image_url%>
-    </p>
-    <p>
       <%= f.label :released_year %><br>
       <%= f.text_field :released_year, :class => 'form-control'  %>
+   </p>
+    <p>
+      <%= f.label :image_url %>
+      <%= f.file_field :image_url%>
     </p>
     <div class="checkbox_container">
       <%= f.collection_check_boxes :genre_ids, Genre.order(:title), :id, :title, include_hidden: false do |b| %>
