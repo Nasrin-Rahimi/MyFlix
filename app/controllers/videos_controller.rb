@@ -5,7 +5,7 @@ class VideosController < ApplicationController
     before_action :set_video, only: [:show, :edit, :update]
     
     def index
-        @videos = Video.search(params[:genre])
+        @videos = Video.search(params[:genre],params[:new_released])
         if @videos.empty?
             flash.now[:notice] = "There is no video for selected genre!"
         end

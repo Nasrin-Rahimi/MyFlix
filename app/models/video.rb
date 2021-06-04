@@ -14,8 +14,11 @@ class Video < ApplicationRecord
         self.reviews.average('rating')
     end
 
-    def self.search(genre)
-        if !genre || genre[:genre_id].empty?
+    def self.search(genre,is_new_released)
+        # binding.pry
+        if is_new_released == "1"
+            Video.new_released
+        elsif !genre || genre[:genre_id].empty? 
            all
         else
             Genre.find(genre[:genre_id]).videos
