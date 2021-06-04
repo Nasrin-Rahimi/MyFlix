@@ -12,9 +12,5 @@ class User < ApplicationRecord
       user.password = SecureRandom.hex
     end
   end
-
-  # def admin?
-  #   self.admin
-  # end
-
+  
 end
