@@ -1,7 +1,6 @@
 class GenresController < ApplicationController
 
     before_action :authentication_required, :authorize_admin
-    # http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
     before_action :set_genre, only: [:show, :edit, :update, :destroy]
     
     def index

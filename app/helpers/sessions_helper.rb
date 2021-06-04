@@ -1,9 +1,7 @@
 module SessionsHelper
 
     def logged_in?
-        #session[:user_id] it doesn''t work. user who logged in can see the other users pages!
         !!current_user
-        # session[:user_id] && session[:user_id] == params[:id].to_i ? true : false
     end
 
     def current_user

@@ -15,9 +15,4 @@ class Review < ApplicationRecord
     self.user.name if self.present? 
   end
 
-  # def self.find_by_video(video_id)
-  #   Review.where(video_id: video_id)
-  # end
-
-  # /edit_video_review_path(@reviews.where(user_id: current_user.id, video_id: @reviews.first.video).first) 
 end

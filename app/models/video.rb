@@ -15,7 +15,6 @@ class Video < ApplicationRecord
     end
 
     def self.search(genre,is_new_released)
-        # binding.pry
         if is_new_released == "1"
             Video.new_released
         elsif !genre || genre[:genre_id].empty? 
