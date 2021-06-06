@@ -4,7 +4,7 @@ This app provides a Ruby on Rails application to build a small part of Netflix.
 
 # What you can do
 
-You can login with your username and password or login via your GitHub account. After login you can see all videos or select a genre and see videos on selected genre. You can also write, edit or delete a review on any video. There is an admin panel in system, that admin user access to it. Admin can create, edit or destroy videos, genres and users.
+You can login with your username and password or login via your GitHub account. After login you can see all videos or select a genre and see videos on selected genre. You can also write, edit or delete a review on any video. There is an admin panel in system. Just admin user have access to admin panel. Admin can create, edit or destroy videos, genres and users.
 
 # Install
 
@@ -26,7 +26,9 @@ bundle && yarn
 
 # Initialize the database
 
-rails db:create db:migrate db:seed
+rails db:create
+rails db:migrate
+rails db:seed
 
 # Serve
 
@@ -38,7 +40,7 @@ https://drive.google.com/file/d/1AYZnZi7PYWhZlAa4d84JjrYmYKRr4XbR/view?usp=shari
 
 # Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/<Nasrin-Rahimi>/MyFlix. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/Nasrin-Rahimi/MyFlix. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the code of conduct.
 
 # License
 
