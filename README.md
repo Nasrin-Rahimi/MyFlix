@@ -33,6 +33,9 @@ rails db:create db:migrate db:seed
 rails s
 visit the site with the URL http://localhost:3000
 
+# Demo
+https://drive.google.com/file/d/1AYZnZi7PYWhZlAa4d84JjrYmYKRr4XbR/view?usp=sharing
+
 # Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/<Nasrin-Rahimi>/MyFlix. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the code of conduct.
