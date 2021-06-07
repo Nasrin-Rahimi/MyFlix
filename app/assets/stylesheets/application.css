@@ -57,6 +57,11 @@ html, body {
     margin: 60px;
     padding: 20px;
     background-color: #caebf2;
+    font-family: monospace;
+    font-size: 18px;
+    background-color: #c0484e;
+    border-radius: 10px;
+    color: whitesmoke;
   }
 
   .video_image{
