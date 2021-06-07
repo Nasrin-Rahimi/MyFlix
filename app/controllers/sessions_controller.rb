@@ -5,12 +5,10 @@ class SessionsController < ApplicationController
 
   def create
     if auth_hash = request.env["omniauth.auth"]
-      #The person 100% trusted coming from github
       @user  = User.find_or_create_by_omniauth(auth_hash)
       login(@user)
       redirect_to root_path
     else
-      #Normal login with an email and password
       if params[:name] == "" || params[:password] == ""
         flash.now[:notice] ="Please enter User Name and Password"
         render :new
