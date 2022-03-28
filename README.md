@@ -36,7 +36,7 @@ rails s
 visit the site with the URL http://localhost:3000
 
 # Demo
-https://drive.google.com/file/d/1AYZnZi7PYWhZlAa4d84JjrYmYKRr4XbR/view?usp=sharing
+https://drive.google.com/file/d/1w-Nd6mRkkkY4hpnaydOUyWmm9AQCGLer/view?usp=sharing
 
 # Contributing
 
